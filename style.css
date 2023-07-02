@@ -1,0 +1,168 @@
+.order{
+    display: inline-block;
+    border: 2px solid blue;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+
+.order::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background: blue;
+    transition: .3s linear;
+    z-index: -1;
+}
+.order:hover::before{
+width: 100%;
+left: 0;
+}
+.burgerhome{
+    width: 100%;
+    padding: 1rem;
+    animation: float 3s linear infinite;
+}
+@keyframes float{
+    0%,100%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(3rem);
+    }
+}
+
+/* Speciality */
+.icones{
+color: orange;
+}
+.card{
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgb(0, 0, 0.3);
+    height: 250px;
+    
+}
+.invisibleimg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: -100%;
+    left: 0;
+}
+.card:hover .invisibleimg{
+    position: absolute;
+    top: 0;
+}
+.card:hover .content{
+    transform: translateY(100%);
+}
+
+.card1{
+    
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgb(0, 0, 0.3);
+    height: 300px;
+    
+}
+.invisibleimg1{
+    width: 150px;
+}
+.fa-star{
+    color: gold;
+}
+.price{
+    background: rgb(98, 98, 252);
+    color: white;
+    padding: 0.5em 1rem;
+    font-size: 1rem;
+   
+}
+.fourimage{
+    border: 2px solid white;
+    border-radius: 50%;
+}
+.mar{
+    display: flex;
+    justify-content: center;
+}
+.box1{
+    cursor: pointer;
+    overflow: hidden;
+   /*  box-shadow: 0 0.5rem 1rem rgb(0, 0, 0.3); */
+    position: relative;
+}
+.invisibecontent{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: rgb(255, 255, 255,0.9);
+}
+.box1:hover .invisibecontent{
+    position: absolute;
+    top: 0;
+    color: blue;
+    padding-top: 12%;
+}
+.human{
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 250px;
+   padding-left: 20%;
+   padding-right: 2%;
+}
+.human1{
+    border-radius: 5px;
+}
+.Footer{
+    background-color: black;
+    height: 100%;
+}
+.mee{
+    color: white;
+}
+.mee1{
+    color: blue;
+}
+#scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+    border-radius: 0.5rem;
+    transition: opacity 0.5s, visibility 0.5s;
+    z-index: 1000;
+    opacity: 0; /* Initially set opacity to 0 */
+    visibility: hidden; /* Initially set visibility to hidden */
+  }
+  
+  #scroll-top.active {
+    opacity: 1; /* Set opacity to 1 when active */
+    visibility: visible; /* Set visibility to visible when active */
+  }
+  
+  
+
+
+
+  #preloader{
+    background: #000 url(img/loader3.webp) no-repeat center center;
+    /* background-size: 25%; */
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+  }
+  
+  

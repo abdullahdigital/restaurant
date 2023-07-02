@@ -1,0 +1,22 @@
+@media screen and (max-width:968px){
+    .nav-link{
+        border: 2px solid rgb(208, 206, 206);
+        border-left: 1px solid red;
+        margin: 5 rem;
+        padding: 0.1 rem;
+    }
+}
+@media screen and (max-width:568px){
+   .fourimage{
+    margin: auto;
+   }
+   .human{
+    overflow: hidden;
+    padding-left: 30%;
+   }
+   .input1{
+   margin: auto;
+   margin-left: 20%;
+   margin-top: 2%;
+   }
+}
