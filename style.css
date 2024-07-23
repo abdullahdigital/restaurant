@@ -1,3 +1,4 @@
+
 .order{
     display: inline-block;
     border: 2px solid blue;
@@ -164,5 +165,25 @@ color: orange;
     position: fixed;
     z-index: 100;
   }
+  /* Navbar Styles */
+  .navbar-brand {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .nav-link {
+    font-family: 'Arial', sans-serif; 
+    transition: color 0.3s, background-color 0.3s; 
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    color: #ffcc00; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 5px; 
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #ffffff; 
+  }
+  
   
   
