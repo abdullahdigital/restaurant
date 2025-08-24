@@ -5,7 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Website</title>
+  <title>Foodie Haven</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
     integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,13 +22,127 @@
   <link rel="shortcut icon" href="img/logo7.png" type="image/x-icon">
 
   <style>
+    /* Basic Reset & Global Styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      max-width: 100%;
-      max-height: 100%;
-     
+    }
+
+    html {
+      font-size: 62.5%; /* 1rem = 10px */
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--light-bg);
+      overflow-x: hidden;
+    }
+
+    section {
+      padding: 5rem 9%;
+    }
+
+    .heading {
+      text-align: center;
+      font-size: 3.5rem;
+      color: var(--text-color);
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+    }
+
+    .heading span {
+      color: var(--primary-color);
+    }
+
+    .btn {
+      margin-top: 1rem;
+      display: inline-block;
+      font-size: 1.7rem;
+      color: #fff;
+      background: var(--primary-color);
+      border-radius: .5rem;
+      cursor: pointer;
+      padding: .8rem 3rem;
+    }
+
+    .btn:hover {
+      background: var(--secondary-color);
+      letter-spacing: .1rem;
+    }
+
+    /* Utility Classes */
+    .text-center {
+      text-align: center;
+    }
+
+    .py-4 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .pb-5 {
+      padding-bottom: 3rem;
+    }
+
+    .pt-5 {
+      padding-top: 3rem;
+    }
+
+    .mb-5 {
+      margin-bottom: 3rem;
+    }
+
+    .mt-5 {
+      margin-top: 3rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
+    }
+
+    .col-lg-6, .col-md-12, .col-sm-12, .col-lg-4 {
+      padding: 15px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 991px) {
+      html {
+        font-size: 55%;
+      }
+      .header .navbar a {
+        padding: 1.5rem;
+      }
+      section {
+        padding: 3rem 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .home .content h3 {
+        font-size: 4.5rem;
+      }
+      .home .content p {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      html {
+        font-size: 50%;
+      }
     }
   </style>
 </head>
@@ -34,55 +151,54 @@
 
 
   
- <!-- Loader -->
-<div id="preloader"></div>
- 
-  <!-- If you want to add click feature add this (class="enlargeable-image") -->
+  <!-- Loader -->
+  <div id="preloader"></div>
 
   <!-- Header -->
-  <header>
+  <header class="header">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-light  " id="home">
+    <nav class="navbar navbar-expand-lg bg-light" id="home">
       <div class="container-fluid">
-        <a class="navbar-brand ps-3" href="index.html"><i class="fa-solid fa-utensils text-danger"> </i> Food</a>
+        <a class="navbar-brand ps-3" href="index.html"><i class="fa-solid fa-utensils text-danger"> </i> Foodie Haven</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse ms-lg-5 ps-lg-5" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-lg-5 ms-lg-5">
-            <a class="nav-link active  ms-lg-5 ps-lg-5 me-lg-0 ps-lg-5 " aria-current="page" href="#">Home</a>
-            <a class="nav-link ms-lg-5 me-lg-0 ps-lg-5 " href="#">Speciality</a>
-            <a class="nav-link ms-lg-5 me-lg-0 ps-lg-5 " href="#">Popular</a>
-            <a class="nav-link ms-lg-5 me-lg-0 ps-lg-5 " href="#">Gallery</a>
-            <a class="nav-link ms-lg-5 me-lg-0 ps-lg-5 " href="#">Review</a>
-            <a class="nav-link ms-lg-5 me-lg-0 ps-lg-5 " href="#">Order</a>
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            <a class="nav-link" href="#speciality">Speciality</a>
+            <a class="nav-link" href="#popular">Popular</a>
+            <a class="nav-link" href="#gallery">Gallery</a>
+            <a class="nav-link" href="#review">Review</a>
+            <a class="nav-link" href="#order">Order</a>
           </div>
         </div>
       </div>
     </nav>
-
-
   </header>
 
-  <!-- Main -->
+  <!-- Main Content -->
   <main>
-    <div class="row ">
-      <div class="col-lg-6 col-md-12 col-sm-12 p-lg-5 p-md-5 mt-5 container ">
-        <h2 class="container">Food Made With Love</h2>
-        <p class="container">At our restaurant, we believe in preparing food with the utmost care and passion. Every dish is made from fresh, high-quality ingredients to ensure you get the best flavor. Whether you’re craving a hearty burger or a light salad, our menu has something to delight every taste. Come experience the warmth and love we put into every meal, and enjoy a dining experience that's both delicious and memorable.</p>
-        <div class="d-flex justify-content-center pe-lg-5 me-lg-5 pe-md-5 me-md-5">
-          <button class="order btn btn-outline-primary">Order Now</button>
+    <!-- Home Section -->
+    <section class="home" id="home">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-md-12 col-sm-12 content">
+          <h2 class="mb-3">Food Made With Love</h2>
+          <p class="mb-4">At our restaurant, we believe in preparing food with the utmost care and passion. Every dish is made from fresh, high-quality ingredients to ensure you get the best flavor. Whether you’re craving a hearty burger or a light salad, our menu has something to delight every taste. Come experience the warmth and love we put into every meal, and enjoy a dining experience that's both delicious and memorable.</p>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <button class="order btn btn-outline-primary">Order Now</button>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 image">
+          <img src="img/burgerhome.avif" alt="Burger-Pic" class="burgerhome img-fluid enlargeable-image">
         </div>
       </div>
-      <div class="col-lg-6 col-md-12 col-sm-12 ps-5">
-        <img src="img/burgerhome.avif" alt="Burger-Pic" class="burgerhome img-fluid enlargeable-image" style="width: 500px;">
-      </div>
-    </div>
-    
+    </section>
 
-    <section class="speciality">
-      <h1 class="d-flex justify-content-center">Our <span class="text-danger ps-3">Speciality</span></h1>
+    <!-- Speciality Section -->
+    <section class="speciality" id="speciality">
+      <h1 class="heading">Our <span>Speciality</span></h1>
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 text-center card border-0">
@@ -97,7 +213,7 @@
             <img src="img/breakfast1.avif" alt="Breakfast" class="enlargeable-image img-fluid invisibleimg">
             <div class="content">
               <i class="fa-solid fa-mug-saucer icones"></i>
-              <h3>Break Fast</h3>
+              <h3>Breakfast</h3>
               <p>Our breakfast options range from classic pancakes and eggs to fresh fruit and yogurt. Start your day right with a delicious and nutritious breakfast that will keep you full and satisfied until lunchtime.</p>
             </div>
           </div>
@@ -110,7 +226,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row mt-4">
           <div class="col-lg-4 col-md-4 col-sm-12 text-center card border-0">
             <img src="img/icecream1.avif" alt="Ice Cream" class="enlargeable-image img-fluid invisibleimg">
             <div class="content">
@@ -138,66 +254,73 @@
         </div>
       </div>
     </section>
-    
 
-    <section class="Poplular">
-      <h1 class="d-flex justify-content-center py-4">Our <span class="text-danger ps-3 pe-3">Popular</span>Food</h1>
+    <!-- Popular Section -->
+    <section class="popular" id="popular">
+      <h1 class="heading">Our <span>Popular</span> Food</h1>
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 text-center card1 border-0">
             <span class="price">$5 - $20</span>
-            <img src="img/burger1.avif" alt="" class="enlargeable-image img-fluid invisibleimg1">
+            <img src="img/burger1.avif" alt="Burger" class="enlargeable-image img-fluid invisibleimg1">
             <div class="content">
               <i class="fa-solid fa-burger icones"></i>
-              <h3>Burger</h3>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i><br>
-              <a href="" class="order btn btn-outline-primary mt-3">Order Now</a>
+              <h3>Tasty Burger</h3>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <a href="#order" class="btn order mt-3">Order Now</a>
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 text-center card1 border-0">
-             <span class="price">$5 - $20</span>
-            <img src="img/breakfast1.avif" alt="" class="enlargeable-image img-fluid invisibleimg1 p-2">
+            <span class="price">$5 - $20</span>
+            <img src="img/breakfast1.avif" alt="Breakfast" class="enlargeable-image img-fluid invisibleimg1 p-2">
             <div class="content">
               <i class="fa-solid fa-mug-saucer icones"></i>
-              <h3>Break Fast</h3>
-             <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i><br>
-              <a href="" class="order btn btn-outline-primary mt-3">Order Now</a>
+              <h3>Delicious Breakfast</h3>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <a href="#order" class="btn order mt-3">Order Now</a>
             </div>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 text-center card1 border-0">
-             <span class="price">$5 - $20</span>
-            <img src="img/drinks1.avif" alt="" class="enlargeable-image img-fluid invisibleimg1">
+            <span class="price">$5 - $20</span>
+            <img src="img/drinks1.avif" alt="Drinks" class="enlargeable-image img-fluid invisibleimg1">
             <div class="content">
               <i class="fa-solid fa-mug-hot icones"></i>
-              <h3>Drinks</h3>
-             <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="far fa-star"></i><br>
-              <a href="" class="order btn btn-outline-primary mt-3">Order Now</a>
+              <h3>Refreshing Drinks</h3>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <a href="#order" class="btn order mt-3">Order Now</a>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row mt-4">
           <div class="col-lg-4 col-md-4 col-sm-12 text-center card1 border-0">
-             <span class="price">$5 - $20</span>
-            <img src="img/icecream1.avif" alt="" class="enlargeable-image img-fluid invisibleimg1 p-2">
+            <span class="price">$5 - $20</span>
+            <img src="img/icecream1.avif" alt="Ice Cream" class="enlargeable-image img-fluid invisibleimg1 p-2">
             <div class="content">
               <i class="fa-solid fa-ice-cream icones"></i>
-              <h3>Ice Cream</h3>
-            <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+              <h3>Sweet Ice Cream</h3>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
               <i class="far fa-star"></i><br>
               <a href="" class="order btn btn-outline-primary mt-3">Order Now</a>
             </div>

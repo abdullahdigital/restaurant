@@ -1,32 +1,77 @@
 
-.order{
+.order {
     display: inline-block;
-    border: 2px solid blue;
+    padding: 0.8rem 2.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-weight: bold;
     position: relative;
     overflow: hidden;
-    z-index: 0;
+    z-index: 1;
+    transition: all 0.3s ease;
 }
 
-
-.order::before{
+.order::before {
     content: "";
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     width: 0%;
     height: 100%;
-    background: blue;
-    transition: .3s linear;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
     z-index: -1;
 }
-.order:hover::before{
-width: 100%;
-left: 0;
+
+.order:hover::before {
+    width: 100%;
 }
-.burgerhome{
+
+.order:hover {
+    color: white;
+}
+
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #48dbfb;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+    --card-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+}
+
+.text-danger {
+    color: var(--primary-color) !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+.burgerhome {
     width: 100%;
     padding: 1rem;
-    animation: float 3s linear infinite;
+    animation: float 3s ease-in-out infinite;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
 }
 @keyframes float{
     0%,100%{
@@ -38,94 +83,154 @@ left: 0;
 }
 
 /* Speciality */
-.icones{
-color: orange;
+.icones {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
-.card{
+.card {
     cursor: pointer;
     overflow: hidden;
-    box-shadow: 0 0.5rem 1rem rgb(0, 0, 0.3);
-    height: 250px;
-    
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 280px; /* Adjusted height for better visual */
+    margin-bottom: 1.5rem; /* Added margin for spacing */
+    background-color: white;
 }
-.invisibleimg{
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.invisibleimg {
     height: 100%;
     width: 100%;
     object-fit: cover;
     position: absolute;
     top: -100%;
     left: 0;
+    border-radius: 10px;
 }
-.card:hover .invisibleimg{
+.card:hover .invisibleimg {
     position: absolute;
     top: 0;
+    border-radius: 10px;
 }
 .card:hover .content{
     transform: translateY(100%);
 }
 
-.card1{
-    
+.card1 {
     overflow: hidden;
-    box-shadow: 0 0.5rem 1rem rgb(0, 0, 0.3);
-    height: 300px;
-    
+    box-shadow: var(--card-shadow);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 320px; /* Adjusted height */
+    margin-bottom: 1.5rem; /* Added margin for spacing */
+    background-color: white;
+}
+
+.card1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 .invisibleimg1{
     width: 150px;
 }
-.fa-star{
-    color: gold;
+.fa-star {
+    color: #FFD700; /* Gold color for stars */
 }
-.price{
-    background: rgb(98, 98, 252);
+.price {
+    background: var(--primary-color);
     color: white;
     padding: 0.5em 1rem;
     font-size: 1rem;
-   
+    border-radius: 0 0 0 10px; /* Rounded corner for the price tag */
+    position: absolute;
+    top: 0;
+    right: 0;
 }
-.fourimage{
-    border: 2px solid white;
+.fourimage {
+    border: 3px solid var(--primary-color);
     border-radius: 50%;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.fourimage:hover {
+    transform: scale(1.05);
 }
 .mar{
     display: flex;
     justify-content: center;
 }
-.box1{
+.box1 {
     cursor: pointer;
     overflow: hidden;
-   /*  box-shadow: 0 0.5rem 1rem rgb(0, 0, 0.3); */
     position: relative;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 1.5rem;
 }
-.invisibecontent{
+
+.box1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.invisibecontent {
     height: 100%;
     width: 100%;
     object-fit: cover;
     position: absolute;
     top: -100%;
     left: 0;
-    background: rgb(255, 255, 255,0.9);
+    background: rgba(255, 255, 255, 0.95); /* Slightly less transparent */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
 }
-.box1:hover .invisibecontent{
+.box1:hover .invisibecontent {
     position: absolute;
     top: 0;
-    color: blue;
-    padding-top: 12%;
+    color: var(--primary-color);
+    padding-top: 0; /* Adjusted padding */
 }
-.human{
-    border: 2px solid white;
+.human {
+    border: 3px solid var(--primary-color);
     border-radius: 50%;
-    width: 250px;
-   padding-left: 20%;
-   padding-right: 2%;
+    width: 200px; /* Adjusted size */
+    height: 200px; /* Adjusted size */
+    object-fit: cover;
+    padding: 5px;
+    transition: transform 0.3s ease;
 }
-.human1{
-    border-radius: 5px;
+
+.human:hover {
+    transform: scale(1.05);
 }
-.Footer{
-    background-color: black;
-    height: 100%;
+.human1 {
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+.Footer {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.Footer .mee {
+    color: white;
+}
+
+.Footer .mee1 {
+    color: var(--primary-color);
 }
 .mee{
     color: white;
@@ -137,53 +242,73 @@ color: orange;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-    background-color: red;
+    padding: 0.7rem 1.2rem;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
     color: white;
-    border-radius: 0.5rem;
-    transition: opacity 0.5s, visibility 0.5s;
+    border-radius: 50%; /* Make it round */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     z-index: 1000;
-    opacity: 0; /* Initially set opacity to 0 */
-    visibility: hidden; /* Initially set visibility to hidden */
-  }
-  
-  #scroll-top.active {
-    opacity: 1; /* Set opacity to 1 when active */
-    visibility: visible; /* Set visibility to visible when active */
-  }
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+#scroll-top.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-5px); /* Slight lift on active */
+}
   
   
 
 
 
-  #preloader{
-    background: #000 url(img/loader3.webp) no-repeat center center;
-    /* background-size: 25%; */
+  #preloader {
+    background: var(--dark-bg) url(img/loader3.webp) no-repeat center center / 15%; /* Adjusted size */
     height: 100vh;
     width: 100%;
     position: fixed;
     z-index: 100;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
   /* Navbar Styles */
   .navbar-brand {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .nav-link {
-    font-family: 'Arial', sans-serif; 
-    transition: color 0.3s, background-color 0.3s; 
-  }
-  
-  .nav-link:hover, .nav-link.active {
-    color: #ffcc00; 
-    background-color: rgba(255, 255, 255, 0.2); 
-    border-radius: 5px; 
-  }
-  
-  .navbar-toggler-icon {
-    background-color: #ffffff; 
-  }
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: var(--primary-color) !important;
+}
+
+.navbar-brand .fa-utensils {
+    color: var(--secondary-color) !important;
+}
+
+.nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--text-color) !important;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: white !important;
+    background-color: var(--primary-color);
+}
+
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
   
   
   
